@@ -1,0 +1,59 @@
+#include<iostream>
+#include<string>
+#include<vector>
+
+
+using namespace std;
+
+void read_chars(string &s)
+{
+   char ch;
+
+   while(cin.get(ch))
+   {
+      s += ch;
+   }
+}
+
+void get_lines(const string &input_buffer,vector<const char*> &lines)
+{
+   const char *c = input_buffer.c_str();
+   const char *sentence = c;
+   for(int i=0;i<input_buffer.size();i++)
+   {
+      if(*c == '\n')
+      {
+         lines.push_back(sentence);
+         c++;
+         sentence = c;
+      }
+      c++;
+   }
+
+}
+
+
+void print_line(const char *l)
+{
+   while(*l != '\n')
+      cout << *l++;
+   cout << endl;
+}
+
+void print_lines(const vector<const char*> &lines)
+{
+   for(const char *line : lines)
+      print_line(line);
+}
+
+int  main()
+{
+   string input_buffer;
+   read_chars(input_buffer);
+   vector<const char*> lines;
+   get_lines(input_buffer,lines);
+   print_lines(lines);
+
+
+   return 0;
+}
