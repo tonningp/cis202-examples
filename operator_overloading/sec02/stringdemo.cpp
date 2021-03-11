@@ -20,6 +20,7 @@ void repeat(String str, int count) // Copy constructor
 int main()
 {
    String name("Mary");
+
    String name2 = name; // Copy constructor
    String name3("Fred"); 
    name = name3; // operator=
