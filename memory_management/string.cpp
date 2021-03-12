@@ -45,8 +45,8 @@ String& String::operator=(const String& other)
    {
       delete[] buffer;
       copy_buffer(other.buffer,other.len);
-   }
-   return *this;
+    }
+    return *this;
 }
 
 String::~String()

@@ -21,6 +21,7 @@ int main()
    String name2 = name; // Copy constructor
    String name3("Fred");
    name3 = name; // operator=
+   name3 = name3; // operator=
 
    int result = spaces(name);
    cout << "Spaces: " << result << endl;
